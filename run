@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" = "c" ]; then
+    echo "clean build"
+    rm build_dir/CMakeCache.txt
+fi
+
+cmake -Bbuild_dir -DCMAKE_INSTALL_PREFIX=./ . || exit 1
+cmake --build build_dir --parallel 6 --target install || exit 1 
+bin/options -p firstOption=a.xyz -p secondOption=5 -p thirdOption=someText

@@ -1,0 +1,9 @@
+output/
+out/
+Debug/
+Release/
+.vscode/
+.vs/
+build_dir/
+build/
+bin/
